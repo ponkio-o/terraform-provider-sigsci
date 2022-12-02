@@ -46,6 +46,7 @@ resource "sigsci_site_rule" "test" {
  - `signal`  -   The signal id of the signal being excluded or tagged. Only used for type=signal
  - `reason`  -   Description of the rule
  - `expiration` - (Required) Date the rule will automatically be disabled. If rule is always enabled, will return empty string (RFC3339 date time)
+ - `requestlogging` - Indicates whether to store the logs for requests that match the rule's conditions (sampled) or not store them (none). This field is only available for request rules that have a block or allow action (default: sampled).
  - `conditions` -   Conditions on which the rule should trigger. May be recursively nest up to 3 times.
    - `type` - (Required) (group, multival, single)
    - `group_operator` -  type: group, multival - Conditions that must be matched when evaluating the request (all, any)
